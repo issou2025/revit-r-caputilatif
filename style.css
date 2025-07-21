@@ -1,0 +1,1910 @@
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+    background-attachment: fixed;
+    /* Optimisations pour mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+/* Effet de particules en arrière-plan */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="particles" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(0,87,184,0.03)"/><circle cx="10" cy="10" r="0.5" fill="rgba(0,87,184,0.02)"/><circle cx="40" cy="40" r="0.5" fill="rgba(0,87,184,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23particles)"/></svg>');
+    pointer-events: none;
+    z-index: -1;
+    animation: float 30s ease-in-out infinite;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* En-tête */
+.header {
+    background: linear-gradient(135deg, #0057B8 0%, #0078D4 50%, #0057B8 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 87, 184, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.logo h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(45deg, #ffffff, #e3f2fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px rgba(255,255,255,0.3)); }
+    to { filter: drop-shadow(0 0 15px rgba(255,255,255,0.6)); }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.author-info {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    display: inline-block;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.author-info:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.author-info p {
+    margin: 0.2rem 0;
+    font-size: 0.95rem;
+}
+
+/* Navigation des dates */
+.date-navigation {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 2.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.date-navigation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0057B8, #0078D4, #0057B8);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.date-navigation h2 {
+    text-align: center;
+    color: #0057B8;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.date-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.date-btn {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #e9ecef;
+    color: #6c757d;
+    padding: 1rem 1.8rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.date-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.date-btn:hover::before {
+    left: 100%;
+}
+
+.date-btn:hover {
+    background: #e3f2fd;
+    border-color: #0057B8;
+    color: #0057B8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 87, 184, 0.2);
+}
+
+.date-btn.active {
+    background: linear-gradient(135deg, #0057B8 0%, #0078D4 100%);
+    border-color: #0057B8;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 87, 184, 0.4);
+    transform: translateY(-2px);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 6px 20px rgba(0, 87, 184, 0.4); }
+    50% { box-shadow: 0 6px 25px rgba(0, 87, 184, 0.6); }
+}
+
+/* Contenu principal */
+.main-content {
+    padding: 3rem 0;
+}
+
+/* Cartes de séance */
+.session-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+    border-radius: 25px;
+    margin-bottom: 3rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 87, 184, 0.08);
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.session-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
+    pointer-events: none;
+    border-radius: 25px;
+}
+
+.session-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0057B8, #0078D4, #0057B8);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.session-card:hover::before {
+    opacity: 1;
+}
+
+.session-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.session-card.active {
+    border-color: #0057B8;
+    box-shadow: 0 6px 25px rgba(0, 87, 184, 0.15);
+}
+
+.session-header {
+    display: flex;
+    align-items: center;
+    padding: 2rem 2.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.session-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 87, 184, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.session-header:hover::before {
+    left: 100%;
+}
+
+.session-header:hover {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.session-date {
+    background: linear-gradient(135deg, #0057B8 0%, #0078D4 100%);
+    color: white;
+    padding: 1.2rem;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 85px;
+    margin-right: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 87, 184, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.session-date::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.session-date .day {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.session-date .month {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.95;
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.session-info {
+    flex: 1;
+}
+
+.session-info h3 {
+    color: #0057B8;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.session-theme {
+    color: #6c757d;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.accordion-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #0057B8;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.accordion-btn:hover {
+    background: rgba(0, 87, 184, 0.1);
+    transform: scale(1.1);
+}
+
+.accordion-btn .icon {
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* Contenu des séances */
+.session-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.session-card.active .session-content {
+    max-height: 2000px;
+}
+
+.content-wrapper {
+    padding: 2rem;
+}
+
+.session-description {
+    font-size: 1.15rem;
+    color: #2c3e50;
+    margin-bottom: 1.8rem;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+.session-points {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.session-points li {
+    padding: 1.2rem 0;
+    padding-left: 2.5rem;
+    position: relative;
+    color: #1a252f;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.session-points li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #0057B8;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-shadow: 0 1px 2px rgba(0, 87, 184, 0.2);
+}
+
+.session-points.numbered {
+    counter-reset: session-counter;
+}
+
+.session-points.numbered li {
+    counter-increment: session-counter;
+    padding-left: 3.5rem;
+    font-weight: 500;
+    color: #1a252f;
+}
+
+.session-points.numbered li::before {
+    content: counter(session-counter);
+    background: linear-gradient(135deg, #0057B8 0%, #0078D4 100%);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    left: 0;
+    box-shadow: 0 2px 6px rgba(0, 87, 184, 0.3);
+}
+
+.sub-points {
+    list-style: none;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
+.sub-points li {
+    padding: 0.3rem 0;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.sub-points li::before {
+    content: "•";
+    color: #0057B8;
+    font-weight: bold;
+}
+
+.session-tips {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #0057B8;
+    margin-top: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 87, 184, 0.1);
+}
+
+.session-tips h4 {
+    color: #0057B8;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+    text-shadow: 0 1px 2px rgba(0, 87, 184, 0.1);
+}
+
+.session-tips p {
+    color: #1a252f;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+/* Call to Action */
+.cta-section {
+    background: linear-gradient(135deg, #0057B8 0%, #0078D4 50%, #0057B8 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 25px;
+    margin: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 87, 184, 0.3);
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 0.3;
+    animation: float 15s ease-in-out infinite;
+}
+
+.cta-content h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(45deg, #ffffff, #e3f2fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-info h4 {
+    color: #3498db;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.footer-info p {
+    margin: 0.3rem 0;
+    opacity: 0.8;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-top: 1rem;
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+}
+
+.whatsapp-btn:hover::before {
+    left: 100%;
+}
+
+.whatsapp-btn:hover {
+    background: #128c7e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-icon {
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Optimisations spécifiques pour mobile */
+    body {
+        background-attachment: scroll;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    body::before {
+        animation: float 20s ease-in-out infinite;
+    }
+    
+    /* Améliorer la lisibilité sur mobile */
+    .session-description {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+    
+    .session-points li {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        padding: 1rem 0;
+        padding-left: 2rem;
+    }
+    
+    .session-points.numbered li {
+        padding-left: 3rem;
+    }
+    
+    .session-tips h4 {
+        font-size: 1.15rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .session-tips p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .logo h1 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .author-info {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .date-navigation {
+        padding: 1.5rem 0;
+    }
+    
+    .date-navigation h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .date-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    
+    .date-btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 30px;
+        touch-action: manipulation;
+    }
+    
+    .main-content {
+        padding: 2rem 0;
+    }
+    
+    .session-card {
+        margin-bottom: 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    }
+    
+    .session-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem 1.2rem;
+    }
+    
+    .session-date {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        min-width: 70px;
+        padding: 0.8rem;
+    }
+    
+    .session-date .day {
+        font-size: 1.6rem;
+    }
+    
+    .session-date .month {
+        font-size: 0.85rem;
+    }
+    
+    .session-info h3 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+    
+    .session-theme {
+        font-size: 0.9rem;
+    }
+    
+    .accordion-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
+    .content-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .session-points li {
+        padding-left: 1.5rem;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .session-points.numbered li {
+        padding-left: 2.5rem;
+    }
+    
+    .sub-points {
+        margin-left: 0.5rem;
+    }
+    
+    .sub-points li {
+        padding-left: 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .session-tips {
+        padding: 1.2rem;
+        margin-top: 1.2rem;
+    }
+    
+    .session-tips h4 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .session-tips p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .cta-section {
+        padding: 2rem 0;
+        margin: 2rem 0;
+        border-radius: 12px;
+    }
+    
+    .cta-content h3 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .footer {
+        padding: 1.5rem 0;
+        margin-top: 2rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-info h4 {
+        font-size: 1.2rem;
+    }
+    
+    .footer-info p {
+        font-size: 0.9rem;
+    }
+    
+    .whatsapp-btn {
+        justify-content: center;
+        padding: 1.2rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 40px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .whatsapp-icon {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    /* Optimisations pour très petits écrans */
+    .session-card {
+        border-radius: 12px;
+        margin-bottom: 1.2rem;
+    }
+    
+    .session-header {
+        padding: 1.2rem 1rem;
+    }
+    
+    .interface-summary {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+    
+    .component-item {
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+    
+    /* Améliorer la lisibilité sur très petits écrans */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    .session-description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .session-points li {
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 0.8rem 0;
+        padding-left: 1.8rem;
+    }
+    
+    .session-points.numbered li {
+        padding-left: 2.5rem;
+    }
+    
+    .session-tips h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.7rem;
+    }
+    
+    .session-tips p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .shortcuts-list li {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding: 0.6rem 0;
+    }
+    
+    .header {
+        padding: 1.5rem 0;
+    }
+    
+    .logo h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .author-info {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    
+    .date-navigation {
+        padding: 1.2rem 0;
+    }
+    
+    .date-navigation h2 {
+        font-size: 1.3rem;
+    }
+    
+    .date-btn {
+        max-width: 260px;
+        padding: 0.9rem 1.2rem;
+        font-size: 0.95rem;
+    }
+    
+    .main-content {
+        padding: 1.5rem 0;
+    }
+    
+    .session-header {
+        padding: 1rem 1.2rem;
+    }
+    
+    .session-date {
+        min-width: 60px;
+        padding: 0.7rem;
+    }
+    
+    .session-date .day {
+        font-size: 1.4rem;
+    }
+    
+    .session-date .month {
+        font-size: 0.8rem;
+    }
+    
+    .session-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .session-theme {
+        font-size: 0.85rem;
+    }
+    
+    .accordion-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .content-wrapper {
+        padding: 1.2rem;
+    }
+    
+    .session-points li {
+        padding-left: 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .session-points.numbered li {
+        padding-left: 2.2rem;
+    }
+    
+    .sub-points li {
+        padding-left: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .session-tips {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .session-tips h4 {
+        font-size: 0.95rem;
+    }
+    
+    .session-tips p {
+        font-size: 0.85rem;
+    }
+    
+    .cta-section {
+        padding: 1.5rem 0;
+        margin: 1.5rem 0;
+    }
+    
+    .cta-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .cta-content p {
+        font-size: 0.9rem;
+    }
+    
+    .footer {
+        padding: 1.2rem 0;
+    }
+    
+    .footer-info h4 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-info p {
+        font-size: 0.85rem;
+    }
+    
+    .whatsapp-btn {
+        padding: 1rem 1.2rem;
+        font-size: 0.95rem;
+        max-width: 280px;
+    }
+}
+
+/* Améliorations spécifiques pour mobile */
+@media (max-width: 768px) {
+    /* Améliorer la lisibilité sur mobile */
+    body {
+        font-size: 16px; /* Éviter le zoom automatique sur iOS */
+        -webkit-text-size-adjust: 100%;
+    }
+    
+    /* Améliorer les performances sur mobile */
+    .session-card,
+    .component-item,
+    .interface-summary {
+        will-change: transform;
+        transform: translateZ(0);
+    }
+    
+    /* Optimiser les animations pour mobile */
+    .session-card:hover {
+        transform: translateY(-3px) translateZ(0);
+    }
+    
+    .component-item:hover {
+        transform: translateX(3px) translateZ(0);
+    }
+    
+    /* Optimiser les boutons pour le touch */
+    button, .date-btn, .whatsapp-btn {
+        min-height: 44px; /* Taille minimale recommandée pour le touch */
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Améliorer l'espacement pour le scroll */
+    .session-card {
+        margin-bottom: 1.2rem;
+    }
+    
+    /* Optimiser les animations pour mobile */
+    .session-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .session-card:hover {
+        transform: translateY(-2px);
+    }
+    
+    /* Améliorer la navigation par dates */
+    .date-buttons {
+        padding: 0 10px;
+    }
+    
+    /* Optimiser l'en-tête pour mobile */
+    .header {
+        position: relative;
+        z-index: 10;
+    }
+    
+    /* Améliorer la lisibilité des listes */
+    .session-points li::before {
+        font-size: 1rem;
+        top: 0.6rem;
+    }
+    
+    .session-points.numbered li::before {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+        top: 0.5rem;
+    }
+    
+    /* Optimiser les tooltips pour mobile */
+    .tooltip {
+        display: none; /* Désactiver les tooltips sur mobile */
+    }
+    
+    /* Améliorer l'accessibilité mobile */
+    .accordion-btn:focus {
+        outline: 2px solid #0057B8;
+        outline-offset: 2px;
+    }
+    
+    /* Optimiser la barre de progression */
+    .progress-bar {
+        height: 2px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.session-card {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.session-card:nth-child(1) { animation-delay: 0.1s; }
+.session-card:nth-child(2) { animation-delay: 0.2s; }
+.session-card:nth-child(3) { animation-delay: 0.3s; }
+
+.date-buttons {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+.date-navigation h2 {
+    animation: slideInRight 0.8s ease forwards;
+}
+
+.cta-section {
+    animation: scaleIn 1s ease forwards;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles pour l'accessibilité */
+button:focus,
+a:focus {
+    outline: 2px solid #0057B8;
+    outline-offset: 2px;
+}
+
+/* États de chargement */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Amélioration de la lisibilité */
+strong {
+    color: #0057B8;
+    font-weight: 600;
+}
+
+/* Styles pour les emojis */
+.session-tips h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Styles pour la section interface Revit */
+.interface-summary {
+    margin-top: 2.5rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 87, 184, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.interface-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0057B8, #0078D4, #0057B8);
+    background-size: 200% 100%;
+    animation: shimmer 4s ease-in-out infinite;
+}
+
+.interface-summary h4 {
+    color: #0057B8;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.component-item {
+    margin-bottom: 1.8rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+    border-radius: 15px;
+    border-left: 4px solid #0057B8;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.component-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #0057B8, #0078D4);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.component-item:hover::before {
+    transform: scaleY(1);
+}
+
+.component-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.component-item h5 {
+    color: #0057B8;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.component-item p {
+    color: #2c3e50;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+.table-container {
+    margin: 2rem 0;
+}
+
+.table-container h5 {
+    color: #0057B8;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.component-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.component-table th {
+    background: #0057B8;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.component-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.component-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.component-table tr:hover {
+    background: #e3f2fd;
+}
+
+.component-table tr:last-child td {
+    border-bottom: none;
+}
+
+.revit-tips {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-radius: 12px;
+    border-left: 4px solid #0057B8;
+}
+
+.revit-tips h5 {
+    color: #0057B8;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.shortcuts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.shortcuts-list li {
+    padding: 0.8rem 0;
+    padding-left: 1.8rem;
+    position: relative;
+    color: #2c3e50;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.shortcuts-list li::before {
+    content: "⌨️";
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+}
+
+.shortcuts-list code {
+    background: #0057B8;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 87, 184, 0.2);
+}
+
+/* Responsive pour la section interface */
+@media (max-width: 768px) {
+    .interface-summary {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        border-radius: 15px;
+    }
+    
+    .interface-summary h4 {
+        font-size: 1.2rem;
+    }
+    
+    .component-item {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+    }
+    
+    .component-item h5 {
+        font-size: 1rem;
+    }
+    
+    .component-item p {
+        font-size: 0.9rem;
+    }
+    
+    .table-container {
+        margin: 1.5rem 0;
+        overflow-x: auto;
+    }
+    
+    .component-table {
+        font-size: 0.8rem;
+        min-width: 500px;
+    }
+    
+    .component-table th,
+    .component-table td {
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .revit-tips {
+        padding: 1.2rem;
+        margin-top: 1.5rem;
+    }
+    
+    .revit-tips h5 {
+        font-size: 1.1rem;
+    }
+    
+    .shortcuts-list li {
+        font-size: 0.9rem;
+        padding-left: 1.2rem;
+    }
+    
+    .shortcuts-list code {
+        font-size: 0.8rem;
+        padding: 0.15rem 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .interface-summary {
+        padding: 1rem;
+    }
+    
+    .interface-summary h4 {
+        font-size: 1.1rem;
+    }
+    
+    .component-item {
+        padding: 0.7rem;
+    }
+    
+    .component-item h5 {
+        font-size: 0.95rem;
+    }
+    
+    .component-item p {
+        font-size: 0.85rem;
+    }
+    
+    .component-table {
+        font-size: 0.75rem;
+        min-width: 400px;
+    }
+    
+    .component-table th,
+    .component-table td {
+        padding: 0.5rem 0.6rem;
+    }
+    
+    .revit-tips {
+        padding: 1rem;
+    }
+    
+    .revit-tips h5 {
+        font-size: 1rem;
+    }
+    
+    .shortcuts-list li {
+        font-size: 0.85rem;
+        padding-left: 1rem;
+    }
+    
+    .shortcuts-list code {
+        font-size: 0.75rem;
+        padding: 0.1rem 0.25rem;
+    }
+} 
+
+/* GLASSMORPHISM & MODERN LOOK */
+.header, .session-card, .interface-summary, .cta-section {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0,87,184,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+    border-radius: 2rem;
+    border: 1.5px solid rgba(0,87,184,0.08);
+}
+
+.session-card, .interface-summary {
+    margin-bottom: 2.5rem;
+    animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: none; }
+}
+
+/* BOUTONS MODERNES */
+.date-btn, .accordion-btn, .whatsapp-btn {
+    border-radius: 2rem !important;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 12px rgba(0,87,184,0.08);
+    transition: all 0.25s cubic-bezier(.4,0,.2,1);
+}
+.date-btn, .whatsapp-btn {
+    padding: 1.1rem 2.2rem;
+}
+.date-btn:active, .whatsapp-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 1px 4px rgba(0,87,184,0.12);
+}
+
+/* BOUTON WHATSAPP FLOTTANT MOBILE */
+@media (max-width: 900px) {
+  .fab-whatsapp {
+    display: flex !important;
+  }
+}
+.fab-whatsapp {
+    display: none;
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9999;
+    background: linear-gradient(135deg,#25d366 0%,#128c7e 100%);
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.25);
+    font-size: 2.1rem;
+    transition: box-shadow 0.2s;
+}
+.fab-whatsapp:hover {
+    box-shadow: 0 8px 32px rgba(37,211,102,0.35);
+    background: linear-gradient(135deg,#128c7e 0%,#25d366 100%);
+}
+
+/* POLICE ET ESPACEMENT */
+body, .session-description, .session-points li, .session-tips p, .component-item p, .shortcuts-list li {
+    font-size: 1.13rem;
+    letter-spacing: 0.01em;
+}
+@media (max-width: 600px) {
+  body, .session-description, .session-points li, .session-tips p, .component-item p, .shortcuts-list li {
+    font-size: 1.18rem;
+  }
+  .header, .session-card, .interface-summary, .cta-section {
+    border-radius: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* MARGES ET AIR */
+.container, .main-content, .content-wrapper {
+    margin-bottom: 2.5rem;
+}
+.session-tips, .component-item {
+    margin-bottom: 1.5rem;
+}
+
+/* STICKY NAVIGATION MOBILE */
+@media (max-width: 900px) {
+  .date-navigation {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,87,184,0.08);
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+}
+
+/* TRANSITIONS DOUCES */
+*, *:before, *:after {
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s, border 0.3s, transform 0.3s;
+} 
+
+/* Effet halo lumineux sur les cartes au survol */
+.session-card:hover, .interface-summary:hover {
+    box-shadow: 0 8px 40px 0 rgba(0,87,184,0.18), 0 1.5px 8px rgba(0,0,0,0.08);
+    transform: translateY(-8px) scale(1.025);
+    border: 1.5px solid #0078D4;
+}
+
+/* Animation d’apparition en cascade */
+.session-card, .interface-summary {
+    opacity: 0;
+    animation: fadeInCascade 1.2s cubic-bezier(.4,0,.2,1) forwards;
+}
+.session-card:nth-child(1) { animation-delay: 0.2s; }
+.session-card:nth-child(2) { animation-delay: 0.4s; }
+.session-card:nth-child(3) { animation-delay: 0.6s; }
+.session-card:nth-child(4) { animation-delay: 0.8s; }
+.interface-summary { animation-delay: 1s; }
+
+@keyframes fadeInCascade {
+    from { opacity: 0; transform: translateY(60px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+}
+
+/* Effet de glow sur le bouton WhatsApp flottant */
+.fab-whatsapp {
+    box-shadow: 0 0 0 0 #25d366, 0 4px 24px rgba(37,211,102,0.25);
+    animation: glowWhats 2.5s infinite alternate;
+}
+@keyframes glowWhats {
+    0% { box-shadow: 0 0 0 0 #25d366, 0 4px 24px rgba(37,211,102,0.25); }
+    100% { box-shadow: 0 0 16px 6px #25d366, 0 8px 32px rgba(37,211,102,0.35); }
+}
+
+/* Animation de fond bokeh */
+body::after {
+    content: '';
+    position: fixed;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(0,87,184,0.08) 0, transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(0,120,212,0.10) 0, transparent 60%),
+                radial-gradient(circle at 50% 90%, rgba(0,87,184,0.06) 0, transparent 70%);
+    animation: bokehMove 18s linear infinite alternate;
+}
+@keyframes bokehMove {
+    0% { background-position: 20% 30%, 80% 70%, 50% 90%; }
+    100% { background-position: 30% 40%, 70% 60%, 60% 80%; }
+}
+
+/* Footer dégradé animé et icônes sociales */
+.footer {
+    background: linear-gradient(90deg, #0057B8 0%, #0078D4 100%);
+    color: #fff;
+    box-shadow: 0 -2px 24px rgba(0,87,184,0.10);
+    position: relative;
+    overflow: hidden;
+}
+.footer-content {
+    align-items: flex-end;
+    gap: 2.5rem;
+}
+.footer-info h4 {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,87,184,0.18);
+}
+.footer-socials {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+.footer-socials a {
+    color: #fff;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+}
+.footer-socials a:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* Dégradés et couleurs plus éclatantes */
+.header {
+    background: linear-gradient(135deg, #0057B8 0%, #0078D4 60%, #00c6fb 100%);
+}
+.date-btn.active {
+    background: linear-gradient(135deg, #0078D4 0%, #00c6fb 100%);
+    border-color: #00c6fb;
+} 
+
+/* Lisibilité tutoriel béton armé */
+#tuto-beton-arme .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 32px rgba(0,87,184,0.07);
+    padding: 2.5rem 2.2rem;
+    color: #1a252f;
+}
+#tuto-beton-arme .session-description {
+    font-size: 1.18rem;
+    color: #1a252f;
+    margin-bottom: 2.2rem;
+    line-height: 1.8;
+    font-weight: 500;
+}
+#tuto-beton-arme .session-tips {
+    margin-bottom: 2.2rem;
+    padding: 2.2rem 1.5rem;
+    background: #f8fafd;
+    border-radius: 1.2rem;
+    border-left: 5px solid #0078D4;
+    box-shadow: 0 2px 12px rgba(0,87,184,0.06);
+}
+#tuto-beton-arme .session-tips h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0057B8;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.01em;
+}
+#tuto-beton-arme .session-points {
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    padding-left: 0.2rem;
+}
+#tuto-beton-arme .session-points li {
+    font-size: 1.13rem;
+    margin-bottom: 1.1rem;
+    line-height: 1.7;
+    color: #1a252f;
+    font-weight: 500;
+    padding-left: 2.2rem;
+}
+#tuto-beton-arme .session-points.numbered li {
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding-left: 2.8rem;
+}
+#tuto-beton-arme .sub-points {
+    margin: 0.7rem 0 0.7rem 1.5rem;
+    padding-left: 1.2rem;
+    font-size: 1.08rem;
+}
+#tuto-beton-arme .sub-points li {
+    margin-bottom: 0.7rem;
+    color: #2c3e50;
+    font-size: 1.08rem;
+    line-height: 1.6;
+    font-weight: 400;
+    padding-left: 1.2rem;
+}
+#tuto-beton-arme .component-table {
+    margin: 1.2rem 0;
+    font-size: 1.08rem;
+    border-radius: 0.8rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,87,184,0.04);
+    overflow-x: auto;
+    display: block;
+    max-width: 100%;
+}
+#tuto-beton-arme .component-table th, #tuto-beton-arme .component-table td {
+    padding: 1rem 1.2rem;
+    min-width: 120px;
+}
+#tuto-beton-arme .component-table th {
+    font-size: 1.08rem;
+    background: #0078D4;
+    color: #fff;
+    font-weight: 700;
+}
+#tuto-beton-arme .component-table td {
+    color: #1a252f;
+    background: #fafdff;
+}
+@media (max-width: 900px) {
+  #tuto-beton-arme .content-wrapper {
+    padding: 1.2rem 0.5rem;
+    font-size: 1.18rem;
+  }
+  #tuto-beton-arme .session-tips {
+    padding: 1.2rem 0.5rem;
+  }
+  #tuto-beton-arme .component-table th, #tuto-beton-arme .component-table td {
+    padding: 0.7rem 0.5rem;
+    font-size: 1.05rem;
+  }
+}
+@media (max-width: 600px) {
+  #tuto-beton-arme .content-wrapper {
+    padding: 0.5rem 0.1rem;
+    font-size: 1.18rem;
+  }
+  #tuto-beton-arme .session-tips {
+    padding: 0.7rem 0.2rem;
+  }
+  #tuto-beton-arme .session-tips h4 {
+    font-size: 1.12rem;
+  }
+  #tuto-beton-arme .session-points li, #tuto-beton-arme .session-points.numbered li {
+    font-size: 1.08rem;
+    padding-left: 1.2rem;
+  }
+  #tuto-beton-arme .sub-points {
+    margin-left: 0.7rem;
+    font-size: 1.02rem;
+  }
+  #tuto-beton-arme .sub-points li {
+    font-size: 1.02rem;
+    padding-left: 0.7rem;
+  }
+} 
+
+/* Mobile friendly & esthétique ++ */
+@media (max-width: 900px) {
+  body {
+    font-size: 18px;
+    background: linear-gradient(135deg, #fafdff 0%, #e3f2fd 100%);
+  }
+  .header, .session-card, .interface-summary, .cta-section {
+    border-radius: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0,87,184,0.08);
+    margin-bottom: 2.2rem;
+  }
+  .date-btn, .whatsapp-btn, .accordion-btn {
+    padding: 1.3rem 2.5rem;
+    border-radius: 2.5rem !important;
+    font-size: 1.15rem;
+  }
+  .session-card, .interface-summary {
+    padding: 0.5rem 0.2rem;
+    margin-bottom: 2.5rem;
+    border: 1.5px solid #e3f2fd;
+  }
+  .session-card:active, .interface-summary:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 12px rgba(0,87,184,0.13);
+  }
+  .main-content {
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+  }
+  .session-card {
+    scroll-snap-align: start;
+    animation: slideUpMobile 0.7s cubic-bezier(.4,0,.2,1);
+  }
+  @keyframes slideUpMobile {
+    from { opacity: 0; transform: translateY(60px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+  .session-tips, .component-item {
+    margin-bottom: 2.2rem;
+    border-radius: 1.5rem;
+    border-left: 5px solid #b3e5fc;
+    background: #fafdff;
+    box-shadow: 0 2px 12px rgba(0,120,212,0.06);
+  }
+  .session-tips:not(:last-child), .component-item:not(:last-child) {
+    border-bottom: 1.5px solid #e3f2fd;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.2rem;
+  }
+  .date-navigation {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,87,184,0.08);
+    border-radius: 0 0 2.5rem 2.5rem;
+    background: linear-gradient(90deg, #e3f2fd 0%, #fafdff 100%);
+  }
+}
+
+/* Séparateurs doux entre sections desktop */
+@media (min-width: 901px) {
+  .session-card:not(:last-child) {
+    border-bottom: 2px solid #e3f2fd;
+    margin-bottom: 3.5rem;
+    padding-bottom: 2.5rem;
+  }
+} 

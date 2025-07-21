@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revit Récap – Cours de Modélisation BIM pour Étudiants</title>
+    <meta name="description" content="Récapitulatif des cours de modélisation BIM avec Autodesk Revit - Par Issoufou Abdou Chefou">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+</head>
+<body>
+    <!-- En-tête -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>REVIT RÉCAP</h1>
+                <p class="subtitle">Cours de Modélisation BIM pour Étudiants</p>
+            </div>
+            <div class="author-info">
+                <p>Par <strong>Issoufou Abdou Chefou</strong></p>
+                <p>Formateur Revit & Ingénieur Civil</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation des dates -->
+    <nav class="date-navigation">
+        <div class="container">
+            <h2>Séances de Formation</h2>
+            <div class="date-buttons">
+                <button class="date-btn active" data-session="session-1">12 Juillet</button>
+                <button class="date-btn" data-session="session-2">13 Juillet</button>
+                <button class="date-btn" data-session="session-3">19 Juillet</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Séance 1 -->
+            <section id="session-1" class="session-card active">
+                <div class="session-header">
+                    <div class="session-date">
+                        <span class="day">12</span>
+                        <span class="month">Juillet</span>
+                    </div>
+                    <div class="session-info">
+                        <h3>Installation des logiciels</h3>
+                        <p class="session-theme">Installation de Revit 2025 et 2019</p>
+                    </div>
+                    <button class="accordion-btn" aria-expanded="true">
+                        <span class="icon">−</span>
+                    </button>
+                </div>
+                <div class="session-content">
+                    <div class="content-wrapper">
+                        <ul class="session-points">
+                            <li>Installation de <strong>Revit 2025</strong></li>
+                            <li>Installation de <strong>Revit 2019</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Séance 2 -->
+            <section id="session-2" class="session-card">
+                <div class="session-header">
+                    <div class="session-date">
+                        <span class="day">13</span>
+                        <span class="month">Juillet</span>
+                    </div>
+                    <div class="session-info">
+                        <h3>Présentation de l'interface utilisateur de Revit</h3>
+                        <p class="session-theme">Découverte des 10 composants principaux de l'interface</p>
+                    </div>
+                    <button class="accordion-btn" aria-expanded="false">
+                        <span class="icon">+</span>
+                    </button>
+                </div>
+                <div class="session-content">
+                    <div class="content-wrapper">
+
+                        <div class="session-tips">
+                            <h4>➕ Astuce :</h4>
+                            <p>Comment personnaliser l'interface pour gagner du temps</p>
+                        </div>
+                        
+                        <div class="interface-summary">
+                            <h4>🔟 Résumé des 10 composants de l'interface de Revit</h4>
+                            
+                            <div class="component-item">
+                                <h5>1. <strong>Barre d'accès rapide</strong></h5>
+                                <p>Située en haut de l'interface, elle donne accès immédiat aux commandes fréquentes comme : Ouvrir, Enregistrer, Annuler, Imprimer, etc. Elle peut être personnalisée.</p>
+                            </div>
+                            
+                            <div class="component-item">
+                                <h5>2. <strong>Barre d'état</strong></h5>
+                                <p>En bas de l'écran, elle affiche des informations contextuelles utiles (étape d'une commande, aide rapide) et les modes de sélection.</p>
+                            </div>
+                            
+                            <div class="component-item">
+                                <h5>3. <strong>Onglet Fichier</strong></h5>
+                                <p>Sert à gérer les projets : Nouveau, Ouvrir, Enregistrer, Exporter, Options, Quitter Revit.</p>
+                            </div>
+                            
+                            <div class="component-item">
+                                <h5>4. <strong>Ruban</strong></h5>
+                                <p>Bande horizontale contenant tous les outils classés par onglets (Architecture, Structure, Annoter…). Il affiche aussi les outils contextuels selon les éléments sélectionnés.</p>
+                            </div>
+                            
+                            <div class="component-item">
+                                <h5>5. <strong>Barre d'options</strong></h5>
+                                <p>Située sous le ruban, elle propose des réglages spécifiques à l'outil actif (rayon, angle, verrouillage…).</p>
+                            </div>
+                            
+                            <div class="component-item">
+                                <h5>6. <strong>Palette des propriétés</strong></h5>
+                                <p>Affiche les paramètres d'un élément sélectionné. On y trouve : propriétés d'instance, propriétés de type, sélecteur de type.</p>
+                            </div>
+                            
+                            <div class="component-item">
+                                <h5>7. <strong>Navigateur de projet</strong></h5>
+                                <p>Permet d'ouvrir les différentes vues du projet : plans, coupes, élévations, vues 3D, feuilles, nomenclatures.</p>
+                            </div>
+                            
+                            <div class="component-item">
+                                <h5>8. <strong>Fenêtre de vue</strong></h5>
+                                <p>Espace central où l'on visualise et modifie le modèle. Plusieurs vues peuvent être ouvertes et organisées (<code>WT</code>, <code>ZA</code>).</p>
+                            </div>
+                            
+                            <div class="component-item">
+                                <h5>9. <strong>Barre de navigation</strong></h5>
+                                <p>Sur la droite de la vue, elle regroupe : zoom, orbite, cube de vue, roues de navigation 2D/3D.</p>
+                            </div>
+                            
+                            <div class="component-item">
+                                <h5>10. <strong>Barre de contrôle de vue</strong></h5>
+                                <p>Tout en bas d'une vue, elle permet de changer l'échelle, le niveau de détail, le style visuel (filaire, ombré, réaliste…), et d'appliquer des filtres, des ombres ou des gabarits.</p>
+                            </div>
+                            
+                            <div class="table-container">
+                                <h5>🧠 Tableau récapitulatif</h5>
+                                <table class="component-table">
+                                    <thead>
+                                        <tr>
+                                            <th>N°</th>
+                                            <th>Nom du composant</th>
+                                            <th>Fonction principale</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Barre d'accès rapide</td>
+                                            <td>Accès rapide aux outils essentiels</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Barre d'état</td>
+                                            <td>Infos contextuelles et aide instantanée</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Onglet Fichier</td>
+                                            <td>Gestion des fichiers et paramètres</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Ruban</td>
+                                            <td>Ensemble des outils Revit</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Barre d'options</td>
+                                            <td>Paramètres spécifiques aux commandes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Palette des propriétés</td>
+                                            <td>Modifier les propriétés des éléments</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Navigateur de projet</td>
+                                            <td>Naviguer entre les vues du projet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Fenêtre de vue</td>
+                                            <td>Affichage et édition du modèle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Barre de navigation</td>
+                                            <td>Outils de zoom et rotation</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>Barre de contrôle de vue</td>
+                                            <td>Réglages visuels de chaque vue</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="revit-tips">
+                                <h5>✨ Astuces Revit</h5>
+                                <ul class="shortcuts-list">
+                                    <li><code>PP</code> → Afficher/cacher la palette des propriétés</li>
+                                    <li><code>ZE</code> → Zoom étendu</li>
+                                    <li><code>WT</code> → Tuiler les vues ouvertes</li>
+                                    <li><code>&lt;Esc&gt;</code> → Annuler/Sortir d'une commande</li>
+                                    <li><code>MV</code>, <code>AL</code>, <code>DI</code> → Déplacer, Aligner, Coter</li>
+                                    <li>Toujours revenir à <strong>Modifier</strong> (<code>Esc</code>) après une action</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Séance 3 -->
+            <section id="session-3" class="session-card">
+                <div class="session-header">
+                    <div class="session-date">
+                        <span class="day">19</span>
+                        <span class="month">Juillet</span>
+                    </div>
+                    <div class="session-info">
+                        <h3>Paramétrage des niveaux, lignes et premiers éléments</h3>
+                        <p class="session-theme">Création de la structure de base du projet</p>
+                    </div>
+                    <button class="accordion-btn" aria-expanded="false">
+                        <span class="icon">+</span>
+                    </button>
+                </div>
+                <div class="session-content">
+                    <div class="content-wrapper">
+                        <p class="session-description">
+                            Cette séance a été très technique :
+                        </p>
+                        <ul class="session-points">
+                            <li>Création des <strong>niveaux</strong> (RDC, R+1, etc.)</li>
+                            <li>Renommage des niveaux</li>
+                            <li>Paramétrage de l'échelle</li>
+                            <li>Insertion des <strong>lignes de construction</strong> verticales et horizontales</li>
+                            <li>Placement des premiers éléments structuraux :
+                                <ul class="sub-points">
+                                    <li>Voiles (murs porteurs en béton)</li>
+                                    <li>Poteaux amorcés (colonnes)</li>
+                                    <li>Semelles isolées (fondations ponctuelles)</li>
+                                    <li>Semelles filantes (fondations linéaires continues)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="session-tips">
+                            <h4>📌 Notions abordées :</h4>
+                            <p>Hauteur de base, plan de référence, alignement automatique</p>
+                        </div>
+                        
+                        <div class="session-tips">
+                            <h4>🏗️ Méthode pour placer un niveau :</h4>
+                            <ol class="session-points numbered">
+                                <li><strong>Se positionner sur une élévation</strong> (Ouest, Sud, Nord ou Est) en faisant un double clic gauche</li>
+                                <li><strong>Activer la commande niveau</strong> en tapant <code>LL</code> sur le clavier</li>
+                                <li><strong>Choisir la commande ligne</strong> dans les options</li>
+                                <li><strong>Spécifier la hauteur du décalage</strong> dans la barre d'options</li>
+                                <li><strong>Positionner sur le niveau à décaler</strong> pour créer le nouveau niveau</li>
+                            </ol>
+                            <p><strong>Note importante :</strong> On peut ajouter autant de niveaux que notre projet requiert.</p>
+                        </div>
+                        
+                        <div class="session-tips">
+                            <h4>🔄 Différence entre versions Revit :</h4>
+                            <ul class="session-points">
+                                <li><strong>Revit 2019 :</strong> Les vues en plans sont créées automatiquement</li>
+                                <li><strong>Revit 2025 :</strong> Il faut créer les vues manuellement dans <code>Vue</code> puis <code>Vues en plans</code></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="session-tips">
+                            <h4>📐 Méthode pour placer les lignes de construction :</h4>
+                            <ol class="session-points numbered">
+                                <li><strong>Choisir une vue en plan</strong> (exemple : fondations)</li>
+                                <li><strong>Activer la commande</strong> en tapant <code>GR</code> sur le clavier</li>
+                                <li><strong>Tracer les lignes</strong> verticales ou horizontales</li>
+                                <li><strong>Décaler les lignes</strong> comme les niveaux en précisant la distance dans la barre d'options</li>
+                                <li><strong>Modifier les lettres et chiffres</strong> selon les exigences du projet</li>
+                            </ol>
+                            <p><strong>Rappel important :</strong> On peut modifier les propriétés des lignes de construction dans la palette des propriétés, notamment les couleurs et les bulles de départ et d'arrivée.</p>
+                        </div>
+                        
+                        <div class="session-tips">
+                            <h4>🏗️ Méthode pour tracer les voiles (épaisseur 20 cm) :</h4>
+                            <ol class="session-points numbered">
+                                <li><strong>Se positionner sur le niveau fondation</strong></li>
+                                <li><strong>Dans l'onglet Structure</strong>, choisir <code>Mur</code></li>
+                                <li><strong>Dans Mur</strong>, choisir <code>Mur porteur</code></li>
+                                <li><strong>Dans la palette des propriétés</strong>, modifier l'épaisseur à 20 cm</li>
+                                <li><strong>Modifier les contraintes du mur</strong> : choisir <code>Hauteur</code></li>
+                                <li><strong>S'assurer qu'un niveau supérieur est sélectionné</code></li>
+                                <li><strong>Tracer le mur</strong> une fois tous les paramètres prêts</li>
+                            </ol>
+                            <p><strong>Note :</strong> Le voile est un élément qui a une hauteur et une épaisseur.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Séance 4 -->
+            <section id="session-4" class="session-card">
+                <div class="session-header">
+                    <div class="session-date">
+                        <span class="day">20</span>
+                        <span class="month">Juillet</span>
+                    </div>
+                    <div class="session-info">
+                        <h3><svg width="24" height="24" fill="none" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:8px;"><rect x="3" y="10" width="18" height="8" rx="2" fill="#0057B8"/><rect x="7" y="6" width="10" height="4" rx="1.5" fill="#00c6fb"/></svg>Modélisation avancée de la structure</h3>
+                        <p class="session-theme">Poursuite de la modélisation de la structure</p>
+                    </div>
+                    <button class="accordion-btn" aria-expanded="false">
+                        <span class="icon">+</span>
+                    </button>
+                </div>
+                <div class="session-content">
+                    <div class="content-wrapper">
+                        <div class="session-tips">
+                            <h4>🏗️ Formation du 20 juillet : Modélisation avancée de la structure</h4>
+                            <ul class="session-points">
+                                <li>Poursuite de la modélisation de la structure</li>
+                                <li>Copie et alignement des niveaux</li>
+                                <li>Mise en place des poteaux en élévation</li>
+                                <li>Création et positionnement des dalles</li>
+                                <li>Réalisation de la trémie pour la cage d’escalier</li>
+                                <li>Mise en forme de l’aire du projet</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Tutoriel Structure Béton Armé (ultra complet) -->
+    <section class="session-card" id="tuto-beton-arme">
+      <div class="session-header">
+        <div class="session-date">
+          <span class="day">🧱</span>
+          <span class="month">Tuto</span>
+        </div>
+        <div class="session-info">
+          <h3 style="display:flex;align-items:center;"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" style="margin-right:10px;"><rect x="2" y="10" width="20" height="8" rx="2" fill="#0057B8"/><rect x="6" y="6" width="12" height="4" rx="1.5" fill="#00c6fb"/></svg>🌍 Tutoriel ultra complet – Modélisation 3D d’une structure en béton armé dans Revit</h3>
+          <p class="session-theme">De A à Z : fondations, poteaux, poutres, dalles, murs porteurs, cage d’escalier</p>
+        </div>
+        <button class="accordion-btn" aria-expanded="false"><span class="icon">+</span></button>
+      </div>
+      <div class="session-content">
+        <div class="content-wrapper">
+          <div class="session-description" style="font-size:1.15rem;line-height:1.7;">
+            <strong>But :</strong> apprendre, depuis une page blanche, à construire tout le squelette en béton armé d’un bâtiment (fondations, poteaux, poutres, dalles, murs porteurs, cage d’escalier) en trois dimensions, sans se disperser dans la mise en page ou l’impression.
+          </div>
+          <div class="session-tips">
+            <h4>0. Pré démarrage</h4>
+            <table class="component-table">
+              <thead><tr><th>Action</th><th>Pourquoi ?</th></tr></thead>
+              <tbody>
+                <tr><td>Ouvrir Revit ► Fichier ► Nouveau ► Projet</td><td>Démarrer un nouveau fichier</td></tr>
+                <tr><td>Choisir le gabarit “Structure – métrique”</td><td>Fournit tous les outils structuraux en millimètres</td></tr>
+                <tr><td>Enregistrer tout de suite sous “Structure_BA.rvt”</td><td>Évite les pertes de données</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="session-tips">
+            <h4>1. Créer le squelette vertical : les niveaux</h4>
+            <ol class="session-points numbered">
+              <li>Vue : Élévation Est</li>
+              <li>Ruban Architecture ► Niveau (ou raccourci <code>LL</code>)</li>
+              <li>Tracer les niveaux (séparer d’environ 3 m) :
+                <ul class="sub-points">
+                  <li>Fondation : 0,00 m</li>
+                  <li>Rez de chaussée : +3,00 m</li>
+                  <li>Étage 1 : +6,00 m</li>
+                  <li>Toiture : +9,00 m</li>
+                </ul>
+              </li>
+              <li>Renommer immédiatement (clic sur le texte) → Revit renomme les plans d’étage associés.</li>
+            </ol>
+            <div class="session-tips" style="background:rgba(0,198,251,0.07);margin-top:1rem;">
+              <strong>Astuce :</strong> si tu souhaites un sous sol, ajoute un niveau “Sous sol −3 m” avant Fondation.
+            </div>
+          </div>
+          <div class="session-tips">
+            <h4>2. Créer le squelette horizontal : les axes (grilles)</h4>
+            <ol class="session-points numbered">
+              <li>Vue : Plan d’étage « Fondation »</li>
+              <li>Ruban Structure ► Axe</li>
+              <li>Tracer les axes principaux :
+                <ul class="sub-points">
+                  <li>Lettres pour l’axe Y (hauteur) : A, B, C, D…</li>
+                  <li>Chiffres pour l’axe X (largeur) : 1, 2, 3, 4…</li>
+                </ul>
+              </li>
+              <li>Vérifier les espacements : idéalement un maillage régulier (par exemple 5 m).</li>
+            </ol>
+            <div class="session-tips" style="background:rgba(0,198,251,0.07);margin-top:1rem;">
+              <strong>Bonus :</strong> les repères d’axes servent plus tard pour les repères de plans de coffrage.
+            </div>
+          </div>
+          <div class="session-tips">
+            <h4>3. Fondations</h4>
+            <ul class="session-points">
+              <li><strong>Semelles isolées (pieds de poteau)</strong> :
+                <ul class="sub-points">
+                  <li>Vue : Plan Fondation</li>
+                  <li>Structure ► Fondation ► Fondation isolée</li>
+                  <li>Dans les propriétés : choisir ou dupliquer un type 900 × 900 × 300 mm</li>
+                  <li>Placer sur chaque croisement d’axes (A1, A2, B1…)</li>
+                </ul>
+              </li>
+              <li><strong>Semelles filantes (sous murs porteurs)</strong> :
+                <ul class="sub-points">
+                  <li>Structure ► Fondation ► Fondation murale</li>
+                  <li>Type conseillé : 300 × 900 mm (largeur × hauteur)</li>
+                  <li>Cliquer le contour des futurs murs (on peut dessiner des segments ouverts)</li>
+                  <li>Vérifier en 3D : les semelles filantes s’alignent au niveau Fondation</li>
+                </ul>
+              </li>
+              <li><strong>Radier général (optionnel)</strong> :
+                <ul class="sub-points">
+                  <li>Structure ► Fondation ► Dalle de fondation</li>
+                  <li>Dessiner un rectangle couvrant toute l’empreinte</li>
+                  <li>Épaisseur : 400 mm ou plus</li>
+                </ul>
+                <div class="session-tips" style="background:rgba(0,198,251,0.07);margin-top:0.5rem;">
+                  Conseil : utiliser soit des semelles isolées + filantes ou un radier, rarement les deux.
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="session-tips">
+            <h4>4. Poteaux verticaux</h4>
+            <ol class="session-points numbered">
+              <li>Vue : Plan Fondation</li>
+              <li>Structure ► Poteau</li>
+              <li>Type par défaut : Béton rectangulaire 300 × 300 mm (duplique si besoin 400×400)</li>
+              <li>Dans la barre d’options :
+                <ul class="sub-points">
+                  <li>Base : Fondation</li>
+                  <li>Haut : Rez de chaussée</li>
+                </ul>
+              </li>
+              <li>Cliquer au centre de chaque semelle isolée</li>
+            </ol>
+          </div>
+          <div class="session-tips">
+            <h4>5. Poutres principales et secondaires</h4>
+            <ul class="session-points">
+              <li><strong>Poutres principales (girders)</strong> :
+                <ul class="sub-points">
+                  <li>Vue : Plan Rez de chaussée</li>
+                  <li>Structure ► Poutre</li>
+                  <li>Type proposé : Béton 300 × 600 mm</li>
+                  <li>Plan de travail : Rez de chaussée</li>
+                  <li>Tracer d’un poteau à l’autre en suivant les axes (ex. A1 → A4)</li>
+                  <li>Répéter sur l’autre direction (1A → 4A, etc.)</li>
+                </ul>
+              </li>
+              <li><strong>Poutres secondaires (solives)</strong> :
+                <ul class="sub-points">
+                  <li>Garde l’outil Poutre ou duplique pour 200 × 400 mm</li>
+                  <li>Tracer entre les poutres principales : maille de 2,50 m</li>
+                  <li>Si quadrillage dense : utiliser Structure ► Système de poutres (pose automatique)</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="session-tips">
+            <h4>6. Dalles pleines</h4>
+            <ol class="session-points numbered">
+              <li>Vue : Plan Rez de chaussée</li>
+              <li>Structure ► Plancher porteur</li>
+              <li>Type : Dalle béton pleine 200 mm (ou créer un radier 250 mm pour les sous sols)</li>
+              <li>Dessiner le contour :
+                <ul class="sub-points">
+                  <li>Utilise Sélectionner lignes pour s’accrocher aux poutres extérieures</li>
+                  <li>Ferme la boucle</li>
+                </ul>
+              </li>
+              <li>Clic sur Valider (coche verte) pour générer la dalle</li>
+            </ol>
+          </div>
+          <div class="session-tips">
+            <h4>7. Murs porteurs (facultatif)</h4>
+            <ol class="session-points numbered">
+              <li>Vue : Rez de chaussée</li>
+              <li>Architecture ► Mur ► type Mur porteur béton 200 mm</li>
+              <li>Base : Fondation – Haut : Toiture</li>
+              <li>Dessiner les murs extérieurs ou de refend</li>
+            </ol>
+          </div>
+          <div class="session-tips">
+            <h4>8. Cage d’escalier simple</h4>
+            <ol class="session-points numbered">
+              <li>Vue : Rez de chaussée</li>
+              <li>Circulation ► Escalier</li>
+              <li>Mode « Dessin par esquisse » :
+                <ul class="sub-points">
+                  <li>Première volée : poinçonner le départ</li>
+                  <li>Deuxième volée : Revit crée automatiquement la volée de retour</li>
+                </ul>
+              </li>
+              <li>Terminer l’esquisse : Revit creuse la dalle (trémie automatique)</li>
+            </ol>
+          </div>
+          <div class="session-tips">
+            <h4>9. Ajustements et contrôles</h4>
+            <table class="component-table">
+              <thead><tr><th>Élément</th><th>Vérification</th><th>Action rapide</th></tr></thead>
+              <tbody>
+                <tr><td>Semelle + poteau</td><td>Alignement vertical</td><td>Attacher la base du poteau à la semelle</td></tr>
+                <tr><td>Poteau + poutre</td><td>Poutre posée sur platine</td><td>Aligner (AL) + Verrouiller</td></tr>
+                <tr><td>Poutre + dalle</td><td>Dessus poutre affleurant dessous dalle</td><td>Menu contextuel Joindre la géométrie</td></tr>
+                <tr><td>Murs & dalles</td><td>Coupe correcte</td><td>Attacher haut du mur à la dalle supérieure</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="session-tips">
+            <h4>10. Passage aux niveaux supérieurs</h4>
+            <ol class="session-points numbered">
+              <li>Copier / Coller aligné (niveaux)
+                <ul class="sub-points">
+                  <li>Sélectionne toutes les poutres + dalles du Rez de chaussée.</li>
+                  <li>Modifier ► Copier ► Coller aligné ► Choisir niveaux → Étape Étape 1.</li>
+                </ul>
+              </li>
+              <li>Ajuster les poteaux : étirer jusqu’au niveau Toiture (sélection multiple + modifier « Haut »)</li>
+            </ol>
+          </div>
+          <div class="session-tips">
+            <h4>11. Vérification globale en 3D</h4>
+            <ul class="session-points">
+              <li>Icône maison ► Vue 3D</li>
+              <li>Style visuel Ligne cachée pour un rendu clair</li>
+              <li>Molette pour zoom, Maj + molette pour orbit</li>
+              <li>Couper une section (ruban Vue ► Section) pour contrôler l’empilement</li>
+            </ul>
+          </div>
+          <div class="session-tips">
+            <h4>12. Conseils de bonne pratique</h4>
+            <ol class="session-points numbered">
+              <li>Nommer tout de suite tes niveaux, axes, types</li>
+              <li>Sauvegarder après chaque étape majeure</li>
+              <li>Utiliser Attacher (poteau/semelle, mur/dalle) pour éviter les “trous” inattendus</li>
+              <li>En cas d’erreur : Ctrl + Z est ton meilleur ami</li>
+              <li>Toujours terminer une esquisse : si le bouton vert n’est pas cliqué, rien n’est créé !</li>
+            </ol>
+          </div>
+          <div class="session-tips">
+            <h4>13. Résultat attendu</h4>
+            <ul class="session-points">
+              <li>Fondations propres : radier ou semelles isolées + filantes</li>
+              <li>Maille porteuse poteaux + poutres : portiques rigides</li>
+              <li>Dalles pleines au Rez de chaussée et aux étages</li>
+              <li>Murs porteurs si besoin, cages d’escalier, trémies</li>
+              <li>Un modèle 3D cohérent, prêt pour l’étape suivante (ferraillage, détails, notes de calcul)</li>
+            </ul>
+            <p>🚀 Tu maîtrises maintenant toute la chaîne de modélisation 3D d’une structure béton dans Revit !<br>
+            <span style="color:#0078D4;font-weight:600;">Si tu veux aller plus loin :</span><br>
+            • Ajouter ferraillages (barres, cadres, nappes),<br>
+            • Mettre en place des charges et combinaisons pour l’analyse,<br>
+            • Générer des plans de coffrage et couleurs par phase,<br>
+            • Ou encore exporter vers un logiciel de calcul (Robot, ETABS, etc.),<br>
+            il suffira de poursuivre sur cette base solide. Bon chantier numérique !</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h3>Continuez à réviser chaque séance pour devenir un expert BIM avec Revit !</h3>
+                    <p>Besoin d'aide ? Envoyez un message via WhatsApp ou relisez le contenu de chaque séance ici.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>Issoufou Abdou Chefou</h4>
+                    <p>Formateur Revit & Ingénieur Civil</p>
+                    <p class="copyright">© 2025 – Tous droits réservés</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://wa.me/22796380877" target="_blank" title="WhatsApp" rel="noopener"><svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.71.306 1.263.489 1.695.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#fff"/></svg></a>
+                    <a href="mailto:issoufou.abdou@example.com" target="_blank" title="Email" rel="noopener"><svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="12" fill="#0078D4"/><path d="M6 8.5v7a1.5 1.5 0 001.5 1.5h9a1.5 1.5 0 001.5-1.5v-7a1.5 1.5 0 00-1.5-1.5h-9A1.5 1.5 0 006 8.5zm1.5-.5h9a.5.5 0 01.5.5v.217l-5 3.125-5-3.125V8.5a.5.5 0 01.5-.5zm-.5 1.383l4.77 2.982a.5.5 0 00.46 0l4.77-2.982V15.5a.5.5 0 01-.5.5h-9a.5.5 0 01-.5-.5V9.383z" fill="#fff"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Bouton WhatsApp flottant mobile -->
+    <a href="https://wa.me/22796380877" class="fab-whatsapp" target="_blank" rel="noopener" title="Contact WhatsApp">
+        <span aria-hidden="true">📱</span>
+    </a>
+</body>
+</html> 
