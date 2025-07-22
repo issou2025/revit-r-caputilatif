@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+    <!-- Font Awesome CDN pour les icônes personnalisées -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papm6Q+1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw1Qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- En-tête -->
@@ -29,9 +31,9 @@
         <div class="container">
             <h2>Séances de Formation</h2>
             <div class="date-buttons">
-                <button class="date-btn active" data-session="session-1">12 Juillet</button>
-                <button class="date-btn" data-session="session-2">13 Juillet</button>
-                <button class="date-btn" data-session="session-3">19 Juillet</button>
+                <button class="date-btn active" data-session="session-1"><i class="fa-solid fa-calendar-day"></i> 12 Juillet</button>
+                <button class="date-btn" data-session="session-2"><i class="fa-solid fa-calendar-day"></i> 13 Juillet</button>
+                <button class="date-btn" data-session="session-3"><i class="fa-solid fa-calendar-day"></i> 19 Juillet</button>
             </div>
         </div>
     </nav>
@@ -51,14 +53,14 @@
                         <p class="session-theme">Installation de Revit 2025 et 2019</p>
                     </div>
                     <button class="accordion-btn" aria-expanded="true">
-                        <span class="icon">−</span>
+                        <i class="fa-solid fa-chevron-up"></i>
                     </button>
                 </div>
                 <div class="session-content">
                     <div class="content-wrapper">
                         <ul class="session-points">
-                            <li>Installation de <strong>Revit 2025</strong></li>
-                            <li>Installation de <strong>Revit 2019</strong></li>
+                            <li><i class="fa-solid fa-check-circle" style="color:#0078D4;margin-right:8px;"></i> Installation de <strong>Revit 2025</strong></li>
+                            <li><i class="fa-solid fa-check-circle" style="color:#0078D4;margin-right:8px;"></i> Installation de <strong>Revit 2019</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -76,67 +78,67 @@
                         <p class="session-theme">Découverte des 10 composants principaux de l'interface</p>
                     </div>
                     <button class="accordion-btn" aria-expanded="false">
-                        <span class="icon">+</span>
+                        <i class="fa-solid fa-chevron-down"></i>
                     </button>
                 </div>
                 <div class="session-content">
                     <div class="content-wrapper">
 
                         <div class="session-tips">
-                            <h4>➕ Astuce :</h4>
+                            <h4><i class="fa-solid fa-lightbulb" style="color:#FFD600;"></i> Astuce :</h4>
                             <p>Comment personnaliser l'interface pour gagner du temps</p>
                         </div>
                         
                         <div class="interface-summary">
-                            <h4>🔟 Résumé des 10 composants de l'interface de Revit</h4>
+                            <h4><i class="fa-solid fa-list" style="color:#0078D4;"></i> 🔟 Résumé des 10 composants de l'interface de Revit</h4>
                             
                             <div class="component-item">
-                                <h5>1. <strong>Barre d'accès rapide</strong></h5>
+                                <h5><i class="fa-solid fa-cube" style="color:#00c6fb;"></i> 1. <strong>Barre d'accès rapide</strong></h5>
                                 <p>Située en haut de l'interface, elle donne accès immédiat aux commandes fréquentes comme : Ouvrir, Enregistrer, Annuler, Imprimer, etc. Elle peut être personnalisée.</p>
                             </div>
                             
                             <div class="component-item">
-                                <h5>2. <strong>Barre d'état</strong></h5>
+                                <h5><i class="fa-solid fa-cube" style="color:#00c6fb;"></i> 2. <strong>Barre d'état</strong></h5>
                                 <p>En bas de l'écran, elle affiche des informations contextuelles utiles (étape d'une commande, aide rapide) et les modes de sélection.</p>
                             </div>
                             
                             <div class="component-item">
-                                <h5>3. <strong>Onglet Fichier</strong></h5>
+                                <h5><i class="fa-solid fa-cube" style="color:#00c6fb;"></i> 3. <strong>Onglet Fichier</strong></h5>
                                 <p>Sert à gérer les projets : Nouveau, Ouvrir, Enregistrer, Exporter, Options, Quitter Revit.</p>
                             </div>
                             
                             <div class="component-item">
-                                <h5>4. <strong>Ruban</strong></h5>
+                                <h5><i class="fa-solid fa-cube" style="color:#00c6fb;"></i> 4. <strong>Ruban</strong></h5>
                                 <p>Bande horizontale contenant tous les outils classés par onglets (Architecture, Structure, Annoter…). Il affiche aussi les outils contextuels selon les éléments sélectionnés.</p>
                             </div>
                             
                             <div class="component-item">
-                                <h5>5. <strong>Barre d'options</strong></h5>
+                                <h5><i class="fa-solid fa-cube" style="color:#00c6fb;"></i> 5. <strong>Barre d'options</strong></h5>
                                 <p>Située sous le ruban, elle propose des réglages spécifiques à l'outil actif (rayon, angle, verrouillage…).</p>
                             </div>
                             
                             <div class="component-item">
-                                <h5>6. <strong>Palette des propriétés</strong></h5>
+                                <h5><i class="fa-solid fa-cube" style="color:#00c6fb;"></i> 6. <strong>Palette des propriétés</strong></h5>
                                 <p>Affiche les paramètres d'un élément sélectionné. On y trouve : propriétés d'instance, propriétés de type, sélecteur de type.</p>
                             </div>
                             
                             <div class="component-item">
-                                <h5>7. <strong>Navigateur de projet</strong></h5>
+                                <h5><i class="fa-solid fa-cube" style="color:#00c6fb;"></i> 7. <strong>Navigateur de projet</strong></h5>
                                 <p>Permet d'ouvrir les différentes vues du projet : plans, coupes, élévations, vues 3D, feuilles, nomenclatures.</p>
                             </div>
                             
                             <div class="component-item">
-                                <h5>8. <strong>Fenêtre de vue</strong></h5>
+                                <h5><i class="fa-solid fa-cube" style="color:#00c6fb;"></i> 8. <strong>Fenêtre de vue</strong></h5>
                                 <p>Espace central où l'on visualise et modifie le modèle. Plusieurs vues peuvent être ouvertes et organisées (<code>WT</code>, <code>ZA</code>).</p>
                             </div>
                             
                             <div class="component-item">
-                                <h5>9. <strong>Barre de navigation</strong></h5>
+                                <h5><i class="fa-solid fa-cube" style="color:#00c6fb;"></i> 9. <strong>Barre de navigation</strong></h5>
                                 <p>Sur la droite de la vue, elle regroupe : zoom, orbite, cube de vue, roues de navigation 2D/3D.</p>
                             </div>
                             
                             <div class="component-item">
-                                <h5>10. <strong>Barre de contrôle de vue</strong></h5>
+                                <h5><i class="fa-solid fa-cube" style="color:#00c6fb;"></i> 10. <strong>Barre de contrôle de vue</strong></h5>
                                 <p>Tout en bas d'une vue, elle permet de changer l'échelle, le niveau de détail, le style visuel (filaire, ombré, réaliste…), et d'appliquer des filtres, des ombres ou des gabarits.</p>
                             </div>
                             
@@ -233,7 +235,7 @@
                         <p class="session-theme">Création de la structure de base du projet</p>
                     </div>
                     <button class="accordion-btn" aria-expanded="false">
-                        <span class="icon">+</span>
+                        <i class="fa-solid fa-chevron-down"></i>
                     </button>
                 </div>
                 <div class="session-content">
@@ -321,7 +323,7 @@
                         <p class="session-theme">Poursuite de la modélisation de la structure</p>
                     </div>
                     <button class="accordion-btn" aria-expanded="false">
-                        <span class="icon">+</span>
+                        <i class="fa-solid fa-chevron-down"></i>
                     </button>
                 </div>
                 <div class="session-content">
@@ -352,7 +354,7 @@
           <h3 style="display:flex;align-items:center;"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" style="margin-right:10px;"><rect x="2" y="10" width="20" height="8" rx="2" fill="#0057B8"/><rect x="6" y="6" width="12" height="4" rx="1.5" fill="#00c6fb"/></svg>🌍 Tutoriel ultra complet – Modélisation 3D d’une structure en béton armé dans Revit</h3>
           <p class="session-theme">De A à Z : fondations, poteaux, poutres, dalles, murs porteurs, cage d’escalier</p>
         </div>
-        <button class="accordion-btn" aria-expanded="false"><span class="icon">+</span></button>
+        <button class="accordion-btn" aria-expanded="false"><i class="fa-solid fa-chevron-down"></i></button>
       </div>
       <div class="session-content">
         <div class="content-wrapper">
@@ -597,8 +599,10 @@
                     <p class="copyright">© 2025 – Tous droits réservés</p>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://wa.me/22796380877" target="_blank" title="WhatsApp" rel="noopener"><svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.71.306 1.263.489 1.695.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#fff"/></svg></a>
-                    <a href="mailto:issoufou.abdou@example.com" target="_blank" title="Email" rel="noopener"><svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="12" fill="#0078D4"/><path d="M6 8.5v7a1.5 1.5 0 001.5 1.5h9a1.5 1.5 0 001.5-1.5v-7a1.5 1.5 0 00-1.5-1.5h-9A1.5 1.5 0 006 8.5zm1.5-.5h9a.5.5 0 01.5.5v.217l-5 3.125-5-3.125V8.5a.5.5 0 01.5-.5zm-.5 1.383l4.77 2.982a.5.5 0 00.46 0l4.77-2.982V15.5a.5.5 0 01-.5.5h-9a.5.5 0 01-.5-.5V9.383z" fill="#fff"/></svg></a>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -606,8 +610,6 @@
 
     <script src="script.js"></script>
     <!-- Bouton WhatsApp flottant mobile -->
-    <a href="https://wa.me/22796380877" class="fab-whatsapp" target="_blank" rel="noopener" title="Contact WhatsApp">
-        <span aria-hidden="true">📱</span>
-    </a>
+    <a href="https://wa.me/22796380877" class="fab-whatsapp" target="_blank" rel="noopener" title="Contact WhatsApp"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html> 

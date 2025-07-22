@@ -9,18 +9,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fonction pour gérer les accordéons
     function toggleAccordion(button, sessionCard) {
         const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        const icon = button.querySelector('.icon');
+        const icon = button.querySelector('i.fa-chevron-up, i.fa-chevron-down');
         
         // Toggle l'état
         button.setAttribute('aria-expanded', !isExpanded);
         
-        // Animer l'icône
-        if (isExpanded) {
-            icon.textContent = '+';
-            icon.style.transform = 'rotate(0deg)';
-        } else {
-            icon.textContent = '−';
-            icon.style.transform = 'rotate(180deg)';
+        // Animer l'icône Font Awesome
+        if (icon) {
+            if (isExpanded) {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+                icon.style.transform = 'rotate(180deg)';
+            }
         }
         
         // Toggle la classe active pour l'animation CSS
@@ -56,11 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Ouvrir l'accordéon automatiquement
             const accordionBtn = targetCard.querySelector('.accordion-btn');
-            const icon = accordionBtn.querySelector('.icon');
+            const icon = accordionBtn.querySelector('i.fa-chevron-up, i.fa-chevron-down');
             
             accordionBtn.setAttribute('aria-expanded', 'true');
-            icon.textContent = '−';
-            icon.style.transform = 'rotate(180deg)';
+            if (icon) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+                icon.style.transform = 'rotate(180deg)';
+            }
             
             // Scroll vers la séance
             setTimeout(() => {
@@ -242,10 +249,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 sessionCards.forEach(card => {
                     card.classList.remove('active');
                     const btn = card.querySelector('.accordion-btn');
-                    const icon = btn.querySelector('.icon');
+                    const icon = btn.querySelector('i.fa-chevron-up, i.fa-chevron-down');
                     btn.setAttribute('aria-expanded', 'false');
-                    icon.textContent = '+';
-                    icon.style.transform = 'rotate(0deg)';
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                        icon.style.transform = 'rotate(0deg)';
+                    }
                 });
             }
             
